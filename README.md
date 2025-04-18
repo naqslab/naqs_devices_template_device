@@ -1,0 +1,1 @@
+# naqs_devices_template_device
