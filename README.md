@@ -7,7 +7,7 @@
     ├── README.md
     ├── LICENSE.txt
     ├── CITATION.cff
-    ├── naqs_devices/
+    ├── naqs_devices/ # note this is intentionally the same as in our naqs_devices repo to be in the same namespace
     │   └── template_device/
     │       ├── __init__.py
     │       ├── register_classes.py
