@@ -16,10 +16,7 @@ class TemplateDeviceTab(DeviceTab):
 
     @define_state(MODE_BUFFERED, True)
     def wait_until_done(self, notify_queue):
-        """
-        Call check_if_done repeatedly in the worker until the shot is 
-        complete
-        """
+        """Call check_if_done repeatedly in the worker until the shot is complete"""
         done = yield (self.queue_work(self.primary_worker, 'check_if_done'))
         # Experiment is over. Tell the queue manager about it:
         if done:
@@ -28,4 +25,3 @@ class TemplateDeviceTab(DeviceTab):
             # Not actual recursion since this just queues up another call
             # after we return:
             self.wait_until_done(notify_queue)
-    

@@ -11,9 +11,11 @@ class TemplateDeviceInterface(object):
     to recompile the connection table if you make changes to this class, only 
     if you change the Worker class below.
     """
-    def __init__(self, param1, param2):
-        self.param1 = param1
-        self.param2 = param2
+    # def __init__(self, param1, param2):
+    #     self.param1 = param1
+    #     self.param2 = param2
+    def __init__(self):
+        pass
 
 class TemplateDeviceWorker(Worker):
     """
@@ -42,7 +44,8 @@ class TemplateDeviceWorker(Worker):
     """
 
     def init(self):
-        self.intf = TemplateDeviceInterface(self, self.param1, self.param2)
+        # self.intf = TemplateDeviceInterface(self, self.param1, self.param2)
+        self.intf = TemplateDeviceInterface()
     def program_manual(self, values):
         return {}
 
