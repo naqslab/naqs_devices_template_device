@@ -8,6 +8,8 @@
     ├── LICENSE.txt
     ├── CITATION.cff
     ├── naqs_devices/ # note this is intentionally the same as in our naqs_devices repo to be in the same namespace
+    |   └── Helpers/
+    |       └── __init__.py
     │   └── template_device/
     │       ├── __init__.py
     │       ├── register_classes.py
