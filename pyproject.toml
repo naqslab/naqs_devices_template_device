@@ -10,13 +10,40 @@ local_scheme = "no-local-version"
 zip-safe = false
 include-package-data = true
 
+[tool.setuptools.package-dir]
+"naqs_devices" = "./src/naqs_devices"
+
 [project]
 name = "naqs_devices_template_device"
 description = "Template repository to create devices within the naqs_device namespace"
 authors = [{name = "naqslab", email = "naqslab@gmail.com"}]
 dynamic = ["version"]
-license = "BSD-2-Clause"
-dependencies = [] # TODO
+license = {file = 'LICENSE.txt'}
+dependencies = [
+    "blacs>=3.3.0",
+    "runmanager>=3.3.0",
+    "labscript>=3.3.0",
+    "labscript_utils>=3.3.0",
+    "numpy>=1.15.1",
+    "pillow",
+    "tqdm",
+    "PyDAQmx",
+    "PyVISA",
+    "PyNIVision",
+    "pyserial",
+    "qtutils>=2.2.3",
+    "spinapi",
+    "zprocess>=2.18.0",
+] # TODO -- check to see if these work on RTD, I added 4/25/25
 
-[tool.setuptools.package-dir]
-"naqs_devices" = "./naqs_devices"
+[project.optional-dependencies]
+docs = [
+    "PyQt5",
+    "Sphinx==7.3.7",
+    "sphinx-rtd-theme==2.0.0",
+    "myst_parser==4.0.1",
+] # Weird numbers, works locally
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"

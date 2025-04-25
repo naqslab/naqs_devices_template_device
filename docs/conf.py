@@ -22,15 +22,17 @@ copyright = '2025, naqslab'
 author = 'naqslab'
 
 # The full version, including alpha/beta/rc tags
-from naqs_devices.Helpers import __version__
-# short version
-version = __version__
-# long version
-release = version
+# from naqs_devices.Helpers import __version__
+# # short version
+# version = __version__
+# # long version
+# release = version
 
-# get version into rst files
-#rst_epilog = '.. |version| replace:: %s' % version
+# # get version into rst files
+# rst_epilog = '.. |version| replace:: %s' % version
 
+# hard coding version
+version = '0.1.0'
 
 # -- General configuration ---------------------------------------------------
 
@@ -53,7 +55,7 @@ viewcode_follow_imported_members = False
 templates_path = ['_templates']
 
 # The master toctree document.
-master_doc = 'index'
+master_doc = 'TemplateDevice.rst'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.

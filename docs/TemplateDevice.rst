@@ -1,18 +1,12 @@
 Template Device for Labscript
 =============================
+README
+------
+.. include:: ../README.md
+   :parser: myst
 
-Overview
---------
-
-
-Installation
-------------
-
-Usage
------
-
-Detailed Documentation
-----------------------
+API Documentation
+-----------------
 
 .. automodule:: naqs_devices.TemplateDevice.labscript_devices
    :members:
