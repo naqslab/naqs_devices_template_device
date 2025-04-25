@@ -20,20 +20,20 @@ authors = [{name = "naqslab", email = "naqslab@gmail.com"}]
 dynamic = ["version"]
 license = {file = 'LICENSE.txt'}
 dependencies = [
-    "blacs>=3.3.0",
-    "runmanager>=3.3.0",
-    "labscript>=3.3.0",
-    "labscript_utils>=3.3.0",
-    "numpy>=1.15.1",
-    "pillow",
-    "tqdm",
-    "PyDAQmx",
-    "PyVISA",
-    "PyNIVision",
-    "pyserial",
-    "qtutils>=2.2.3",
-    "spinapi",
-    "zprocess>=2.18.0",
+    # "blacs>=3.0.0",
+    # "runmanager>=3.0.0",
+    # "labscript>=3.0.0",
+    # "labscript_utils>=3.0.0",
+    # "numpy>=1.15.1",
+    # "pillow",
+    # "tqdm",
+    # "PyDAQmx",
+    # "PyVISA",
+    # "PyNIVision",
+    # "pyserial",
+    # "qtutils>=2.2.3",
+    # "spinapi",
+    # "zprocess>=2.18.0",
 ] # TODO -- check to see if these work on RTD, I added 4/25/25
 
 [project.optional-dependencies]

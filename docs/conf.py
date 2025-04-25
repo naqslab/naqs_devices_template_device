@@ -55,7 +55,7 @@ viewcode_follow_imported_members = False
 templates_path = ['_templates']
 
 # The master toctree document.
-master_doc = 'TemplateDevice.rst'
+master_doc = 'TemplateDevice'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
