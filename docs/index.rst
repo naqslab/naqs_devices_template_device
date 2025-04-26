@@ -3,7 +3,7 @@ Template Device for Labscript
 README
 ------
 .. include:: ../README.md
-   :parser: myst
+   :parser: myst_parser.sphinx_
 
 API Documentation
 -----------------
@@ -25,7 +25,7 @@ API Documentation
    :undoc-members:
    :show-inheritance:
    
-.. automodule:: naqs_devices.TemplateDevice.register_classes
+.. automodule:: naqs_devices.TemplateDevice.runviewer_parsers
    :members:
    :undoc-members:
    :show-inheritance:

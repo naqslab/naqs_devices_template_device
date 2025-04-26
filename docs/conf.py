@@ -46,6 +46,7 @@ extensions = [
 	'sphinx.ext.viewcode',
 	'sphinx.ext.intersphinx',
 	'sphinx.ext.coverage',
+    'myst_parser',
 ]
 
 # disable viewcode from putting in source for imported libraries
@@ -87,6 +88,8 @@ autodoc_default_options = {
 		#"imported-members":True,
 		"exclude-members":''
 }
+
+autodoc_mock_imports = ['labscript_utils']
 
 needs_sphinx = '2.2'
 
