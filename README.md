@@ -19,7 +19,7 @@
     │       ├── blacs_workers.py
     │       └── runviewer_parsers.py
     └── docs/
-        └── TemplateDevice.rst
+        └── index.rst
 
 ```
 
@@ -27,4 +27,4 @@
 
 To work within the labscript paradigm, we enforce that you write all
 specification related documentation in the top-level README.md (here). Then,
-any API related documentation should go in the `docs/YourDevice.rst`.
+any API related documentation should go in the `docs/index.rst`.

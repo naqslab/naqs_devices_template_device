@@ -45,7 +45,7 @@ extensions = [
 	'sphinx.ext.napoleon',
 	'sphinx.ext.viewcode',
 	'sphinx.ext.intersphinx',
-	'sphinx.ext.coverage'
+	'sphinx.ext.coverage',
 ]
 
 # disable viewcode from putting in source for imported libraries
@@ -55,7 +55,7 @@ viewcode_follow_imported_members = False
 templates_path = ['_templates']
 
 # The master toctree document.
-master_doc = 'TemplateDevice'
+master_doc = 'index'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
