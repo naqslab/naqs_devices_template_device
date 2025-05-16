@@ -2,11 +2,26 @@ from labscript import Device, config, LabscriptError, set_passed_properties
 import numpy as np
 
 class _TemplateChildDevice(Device):
+    '''Optional but sometimes necessary backend child device to handle some to
+    attached to the parent device (here TemplateDevice) for logical or 
+    attribute-based processing.
+
+    Args:
+        Device (object): The child device inherits all methods from the Device
+        class
+    '''
     # def add_device(self, device):
     #     Device.add_device(self, device)
     pass
-class TemplateDevice(Device):
 
+class TemplateDevice(Device):
+    '''Constructs the object that the user will instantiate in both their 
+    connection table and experiment script(s).
+
+    Args:
+        Device (object): TemplateDevice inherits all methods from the Device
+        class.
+    '''
     description = 'Template Device, minimal example'
     allowed_children = [_TemplateChildDevice]
     max_instructions = 1e5
@@ -27,17 +42,17 @@ class TemplateDevice(Device):
         Device.__init__(self, name, None, None, **kwargs)
 
         some_property = 1000
-        # self._template_internal_device = _TemplateChildDevice(
-        #     name = f'{name}_child_device',
-        #     template_child_device = self,
-        #     connection = 'internal',
-        # )
-
-    # @property
-    # def template_internal_device(self):
-    #     return self._template_internal_device
 
     def generate_code(self, hdf5_file):
+        '''Writes instructions to an h5 file to be processed by other 
+        labscript components. As an example, we generate 3 columns of random 
+        data and use h5py to save the data to the shotfile. Labscript commonly
+        makes use of numpy structured arrays to explicitly specify types.
+
+        Args:
+            hdf5_file (str): The path to the shot-file, passed in by labscript
+            components.
+        '''
         group = self.init_device_group(hdf5_file)
 
         num_instructions = 10
@@ -45,7 +60,6 @@ class TemplateDevice(Device):
         y_data = np.random.randn(num_instructions)
         z_data = np.random.randn(num_instructions)
 
-        # Store these instructions to the h5 file:
         dtypes = [('x_data', float), ('y_data', float), ('z_data', float)]
         instructions = np.zeros(num_instructions, dtype=dtypes)
 

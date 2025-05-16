@@ -10,7 +10,7 @@
     ├── README.md
     ├── LICENSE.txt
     ├── CITATION.cff
-    ├── naqs_devices/ # note: must be same as in the parent naqs_devices repo to be in the same namespace
+    ├── src/naqs_devices/ # note: must be same as in the parent naqs_devices repo to be in the same namespace
     │   └── TemplateDevice/
     │       ├── __init__.py
     │       ├── register_classes.py
