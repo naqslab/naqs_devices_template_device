@@ -45,6 +45,8 @@ class TemplateDeviceWorker(Worker):
             methods.
         '''
         # some logic here to update your device's front panel
+        self.logger.info('\nUpdating front panel...')
+        self.logger.info(values)
         return values
     
     def check_remote_values(self):
@@ -55,6 +57,8 @@ class TemplateDeviceWorker(Worker):
             dict: returns an empty dictionary, can be populated depending on 
             level of device feedback.
         '''
+        self.logger.info('\nChecking remote values...')
+
         results = {}
         # Do some logic to populate the results dict depending on your device
         return results
@@ -81,15 +85,21 @@ class TemplateDeviceWorker(Worker):
             dict: Dictionary of expected final output states.
         '''
 
+        # Store the initial values in case we have to abort and restore them:
+        self.initial_values = initial_values
+        # Store the final values for use during transition_to_manual:
+        self.final_values = initial_values
+
         # get stop time:
         with h5py.File(h5file, 'r') as f:
             props = properties.get(f, self.device_name, 'device_properties')
             # self.stop_time = props.get('stop_time', None) # stop_time may be absent if we are not the master pseudoclock
-        return {}
+        return self.final_values
     
     def transition_to_manual(self):
         '''Logic that runs after buffered execution to return control to the 
-        user/front panel.
+        user/front panel. May need to call :meth:`abort_buffered` to handle 
+        behavior such as timeouts.
 
         Returns:
             Bool: returns True for internal logic.
@@ -108,10 +118,10 @@ class TemplateDeviceWorker(Worker):
     
     def abort_buffered(self):
         '''Called when the user presses the abort button during buffered
-        execution.
+        execution. Here returns to initial values, since buffered execution 
+        needed to be stopped.
         '''
 
-        values = self.initial_values
-        self.program_manual(values)
+        self.program_manual(self.initial_values)
 
         return True
