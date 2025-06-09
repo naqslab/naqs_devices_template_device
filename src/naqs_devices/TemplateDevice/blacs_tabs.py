@@ -5,6 +5,9 @@ class TemplateDeviceTab(DeviceTab):
     show_widgets = True
 
     def initialise_GUI(self):
+        '''Required to place GUI widgets and contains options for remote value
+        checking and smart cache capability.
+        '''
 
         # Capabilities
         self.base_units =    {'freq':'Hz',          'amp':'Arb',   'phase':'Degrees'}

@@ -1,5 +1,12 @@
 # naqs_devices_template_device
 
+This repository is both a template to follow for a labscript-device belonging
+to a namespace (here `naqs_devices`) as well as a github template repository.
+Use the green `Use this template` button above to copy the files and structure
+of this repository to fit your new device. We denote what lines in
+configuration files (such as `pyproject.toml`) should be edited when using this
+repository as a template with `# EDITME`
+
 ## Directory structure
 
 ```text

@@ -9,6 +9,9 @@ README
 API Documentation
 -----------------
 
+.. Double check this list actually does include the correct set of files for
+.. your device! (E.g. you may not have a runviewer parser file)
+
 .. automodule:: naqs_devices.TemplateDevice.labscript_devices
    :members:
    :undoc-members:

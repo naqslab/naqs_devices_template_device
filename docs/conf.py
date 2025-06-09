@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.abspath('..'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'naqs_devices_template_device'
+project = 'naqs_devices_template_device' # EDITME
 copyright = '2025, naqslab'
 author = 'naqslab'
 
