@@ -2,13 +2,6 @@
 requires = ["setuptools>=64"]
 build-backend = "setuptools.build_meta"
 
-## Required for version control via git tags
-# requires = ["setuptools>=64", "wheel", "setuptools_scm>=8"]
-
-# [tool.setuptools_scm]
-# version_scheme = "release-branch-semver"
-# local_scheme = "no-local-version"
-
 [tool.setuptools]
 zip-safe = false
 include-package-data = true
@@ -16,11 +9,21 @@ include-package-data = true
 [tool.setuptools.package-dir]
 "naqs_devices" = "./src/naqs_devices" 
 
+# This controls the version from the src/naqs_devices/TemplateDevice/__init__.py
+[tool.setuptools.dynamic]
+version = {attr = "naqs_devices.TemplateDevice.__version__"}
+
 [project]
-name = "naqs_devices_template_device" # EDITME
-description = "Template repository to create devices within the naqs_device namespace" # EDITME
-authors = [{name = "naqslab", email = "naqslab@gmail.com"}] # EDITME
-dynamic = ["version"]
+# Update the keys [name, description, authors]
+# Dependencies should only be the minimum required to install
+# The below list are a typical minimal set required for a labscript device
+# The first is the parent namespace
+# Then labscript components
+
+name = "naqs_devices_template_device" 
+description = "Template repository to create devices within the naqs_device namespace"
+authors = [{name = "naqslab", email = "naqslab@gmail.com"}]
+dynamic = ["version"] # go check this in the docs
 license = {file = 'LICENSE.txt'}
 dependencies = [
     "naqs_devices @ git+https://github.com/naqslab/naqs_devices.git",
@@ -32,6 +35,7 @@ dependencies = [
     "h5py",
 ]
 
+# These are required to build the RTD docs, don't touch them unless RTD complains
 [project.optional-dependencies]
 docs = [
     "PyQt5",
@@ -40,6 +44,7 @@ docs = [
     "myst_parser==4.0.1",
 ]
 
+# Don't change this
 [project.readme]
 file = "README.md"
 content-type = "text/markdown"

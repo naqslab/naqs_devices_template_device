@@ -9,3 +9,5 @@
 # See the license.txt file in the root of the project for the full license.   #
 #                                                                             #
 ###############################################################################
+
+__version__ = '0.1.0'

@@ -5,6 +5,7 @@
 version: 2
 
 # Set build environment options
+# These may need to occasionally be updated
 build:
   os: ubuntu-22.04
   tools:

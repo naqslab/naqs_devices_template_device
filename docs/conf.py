@@ -13,6 +13,7 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))
+import importlib.metadata as importlib_metadata
 
 
 # -- Project information -----------------------------------------------------
@@ -21,18 +22,12 @@ project = 'naqs_devices_template_device' # EDITME
 copyright = '2025, naqslab'
 author = 'naqslab'
 
-# The full version, including alpha/beta/rc tags
-# from naqs_devices.Helpers import __version__
-# # short version
-# version = __version__
-# # long version
-# release = version
+version = importlib_metadata.version('TemplateDevice')
+# long version
+release = version
 
-# # get version into rst files
-# rst_epilog = '.. |version| replace:: %s' % version
-
-# hard coding version
-version = '0.1.0'
+# get version into rst files
+rst_epilog = '.. |version| replace:: %s' % version
 
 # -- General configuration ---------------------------------------------------
 
