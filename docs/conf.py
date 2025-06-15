@@ -13,7 +13,7 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))
-import importlib.metadata as importlib_metadata
+import importlib.metadata
 
 
 # -- Project information -----------------------------------------------------
@@ -22,7 +22,7 @@ project = 'naqs_devices_template_device' # EDITME
 copyright = '2025, naqslab'
 author = 'naqslab'
 
-version = importlib_metadata.version('TemplateDevice')
+version = importlib.metadata.version('naqs_devices_template_device')
 # long version
 release = version
 
