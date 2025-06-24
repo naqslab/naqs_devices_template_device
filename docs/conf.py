@@ -18,7 +18,7 @@ import importlib.metadata
 
 # -- Project information -----------------------------------------------------
 
-project = 'naqs_devices_template_device' # EDITME
+project = 'naqs_devices_template_device'
 copyright = '2025, naqslab'
 author = 'naqslab'
 
